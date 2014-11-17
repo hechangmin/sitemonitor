@@ -1,0 +1,13 @@
+{
+    "name"            : "sitemonitor",
+    "description"     : "A site server monitor.",
+    "version"         : "1.0.0",
+    "homepage"        : "http://github.com/hechangmin/sitemonitor",
+    "dependencies"    : {},
+    "devDependencies" : {
+        "mysql"       : "~2.1.0",
+        "todo4js"     : "~0.0.1",
+        "moment"      : "~2.8.3"
+    },
+    "author" : "hechangmin<hechangmin@gmail.com>"
+}
