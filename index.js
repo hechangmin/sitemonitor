@@ -119,16 +119,15 @@
         //写入到数据库
         while(retList.length){
             item = retList.shift();
-            sql = '("';
-            sql += item.url + '","';
-            sql += ''=== item.params ?  '","' : (mysqlConn.escape(JSON.stringify(item.params)) + '","');
+            sql = '(';
+            sql += mysqlConn.escape(item.url) + ',';
+            sql += '' === item.params ?  '"","' : (mysqlConn.escape(JSON.stringify(item.params)) + ',"');
             sql += item.status + '","';
-            sql += item.method + '","';
-            sql += item.ret + '","';
-            sql += item.msg + '","';
-            sql += item.spent + '","';
-            sql += mysqlConn.escape(item.jsonRet) + '"';
-            sql += ')';
+            sql += item.method + '",';
+            sql += mysqlConn.escape(item.ret) + ',';
+            sql += mysqlConn.escape(item.msg) + ',"';
+            sql += item.spent + '",';
+            sql += mysqlConn.escape(item.jsonRet) + ')';
             arrSqls.push(sql);
         }
         
